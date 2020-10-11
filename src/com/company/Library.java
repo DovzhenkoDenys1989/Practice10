@@ -5,14 +5,14 @@ package com.company;
 public class Library {
     public static void main(String[] args) {
     }
-        private String[] films;
+        private Film[] films;
         private String nameLibrary;
         public static final String CONSTANTA = "Name";
 
         {
-            this.films = new String[5];
-            films[0] = "Крепкий орешек";
-            films[1] = "Поезд в Пусан";
+            this.films = new Film[5];
+            films[0] = new Film("Jumanji","01:35",Film.FANTASY);
+            films[1] = new Film("Bell", "02:25", Film.HORROR);
             System.out.println("Добавлены любимые фильмы");
         }
 
@@ -21,11 +21,7 @@ public class Library {
             System.out.println("Библиотека " + nameLibrary + ", успешно создана.");
         }
 
-        public String[] getFilms () {
-            return films;
-        }
-
-        public static String getCONSTANTA () {
+       public static String getCONSTANTA () {
             return CONSTANTA;
         }
 
@@ -40,13 +36,12 @@ public class Library {
         }
         return -1;
 }
-
     /**
      * @param film added movie.
      * @return added movie with index.
      */
 
-public String implementCheck(String film) {
+public String implementCheck(Film film) {
     int indexOfArray = returnArray();
     if (indexOfArray == -1) {
         return "Вы достигли лимита";
